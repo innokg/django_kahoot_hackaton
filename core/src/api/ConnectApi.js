@@ -1,12 +1,10 @@
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-
 
 const useCollectData = (url) => {
-    const [fetch, setFetching] = useState({isFetching: false})
-    const[dataState, setDataState] = useState({data: []});
+    const [fetch, setFetching] = useState({ isFetching: false });
+    const [dataState, setDataState] = useState({ data: [] });
     const [apiurl] = useState(url);
-
 
     useEffect(() => {
         const fetchDataFromApi = async () => {
@@ -28,6 +26,6 @@ const useCollectData = (url) => {
 
     return [dataState]
 
-}
+};
 
 export default useCollectData
